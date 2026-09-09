@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aurora's N Coffee: especialidades, pan artesanal y un espacio para compartir.">
+  <title>Café Bruma</title>
+  <style>
+    :root { --espresso:#1e120d; --cacao:#3d241a; --caramel:#c98544; --cream:#fff4e5; --paper:#f7e8d5; --ink:#261811; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--cream); color:var(--ink); }
+    .hero { min-height: 570px; padding: 24px 8%; color:white; background: linear-gradient(90deg, rgba(25,13,9,.92) 0%, rgba(25,13,9,.72) 46%, rgba(25,13,9,.22) 100%), url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=85") center/cover; }
+    nav { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .logo { font-family: Georgia, serif; font-size:1.65rem; font-weight:bold; letter-spacing:.5px; }
+    nav a { color:white; text-decoration:none; margin-left:18px; font-size:.95rem; }
+    .intro { max-width:600px; padding-top:135px; }
+    .intro p:first-child { color:#f2bd80; font-size:.85rem; font-weight:bold; letter-spacing:2px; text-transform:uppercase; }
+    h1 { font-family: Georgia, serif; font-size: clamp(3rem, 7vw, 5.8rem); line-height:.96; margin:12px 0 20px; }
+    .intro .text { max-width:480px; font-size:1.08rem; line-height:1.6; color:#f8eadd; }
+    .button { display:inline-block; padding:14px 22px; margin-top:15px; border-radius:4px; background:var(--caramel); color:white; font-weight:bold; text-decoration:none; transition:.2s; }
+    .button:hover { background:#e29b54; transform:translateY(-2px); }
+    section { padding:75px 8%; }
+    .heading { text-align:center; margin-bottom:34px; }
+    .heading p { margin:0 0 8px; color:#9a552a; letter-spacing:1.7px; text-transform:uppercase; font-size:.78rem; font-weight:bold; }
+    h2 { font-family:Georgia, serif; font-size:2.35rem; margin:0; }
+    .menu { background:var(--paper); }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1100px; margin:auto; }
+    .card { background:white; padding:26px; border-bottom:4px solid var(--caramel); box-shadow:0 7px 22px rgba(54,30,18,.09); }
+    .card h3 { font-family:Georgia,serif; font-size:1.35rem; margin:0 0 8px; }
+    .card p { color:#6c5143; line-height:1.5; min-height:50px; }
+    .price { color:#a95724; font-weight:bold; font-size:1.12rem; }
+    .about { display:grid; grid-template-columns:1fr 1fr; gap:55px; align-items:center; max-width:1100px; margin:auto; }
+    .about img { width:100%; height:340px; object-fit:cover; border-radius:7px; }
+    .about p { color:#62493d; line-height:1.7; font-size:1.05rem; }
+    footer { padding:34px 8%; background:var(--espresso); color:#f8eadd; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer p { margin:4px 0; line-height:1.5; }
+    @media (max-width:700px) { nav { align-items:flex-start; } nav div { display:flex; flex-direction:column; gap:9px; } nav a { margin:0; } .intro { padding-top:95px; } .cards, .about { grid-template-columns:1fr; } section { padding:56px 7%; } .about { gap:28px; } .about img { height:260px; } }
+  </style>
+</head>
+<body>
+  <header class="hero" id="inicio">
+    <nav>
+      <div class="logo">☕ Aurora's N Coffee</div>
+      <div>
+        <a href="#menu">Menú</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+    <div class="intro">
+      <p>Desde Huetamo, para tu mañana</p>
+      <h1>Un buen día empieza con café.</h1>
+      <p class="text">Café de especialidad, pan recién horneado y una mesa lista para tus mejores pláticas.</p>
+      <a class="button" href="#menu">Ver menú</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="menu" id="menu">
+      <div class="heading">
+        <p>Preparado al momento</p>
+        <h2>Favoritos de la casa</h2>
+      </div>
+      <div class="cards">
+        <article class="card"><h3>Espresso doble</h3><p>Intenso, aromático y con una crema suave.</p><span class="price">$45 MXN</span></article>
+        <article class="card"><h3>Latte de vainilla</h3><p>Espresso, leche cremosa y un toque de vainilla.</p><span class="price">$65 MXN</span></article>
+        <article class="card"><h3>Cold brew</h3><p>Café extraído en frío durante 12 horas, servido con hielo.</p><span class="price">$60 MXN</span></article>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="about">
+        <img src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=1000&q=85" alt="Taza de café sobre una mesa de madera">
+        <div>
+          <div class="heading" style="text-align:left"><p>Nuestra historia</p><h2>Café con calma</h2></div>
+          <p>En Aurora's N Coffee cuidamos cada taza desde el grano hasta la mesa. Queremos que vengas por un café y te quedes por el ambiente: música tranquila, pan artesanal y buena compañía.</p>
+          <a class="button" href="#contacto">Visítanos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <div><strong>Aurora's N Coffee</strong><p>Av. Principal 120, Huetamo, Michoacán</p></div>
+    <div><p>Lunes a sábado · 8:00 a.m. – 8:00 p.m.</p><p>☎ 435 000 0000 · @cafebruma</p></div>
+  </footer>
+</body>
+</html>
