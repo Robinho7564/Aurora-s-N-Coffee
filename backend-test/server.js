@@ -287,3 +287,24 @@ app.listen(PORT, () => {
     console.log(`   PUT  /api/orders/:id/status - Actualizar estado`);
     console.log(`   GET  /api/test           - Probar API`);
 });
+
+// ===== NUEVO ENDPOINT: Menú del día =====
+app.get('/api/menu-del-dia', (req, res) => {
+    const menuDelDia = {
+        fecha: new Date().toISOString().split('T')[0],
+        especial: {
+            nombre: "Café de Olla",
+            precio: 40,
+            descripcion: "Café tradicional con canela y piloncillo"
+        },
+        promociones: [
+            { nombre: "Combo desayuno", precio: 75, incluye: "Café + Sandwich" },
+            { nombre: "2x1 en Lattes", precio: 45, horario: "3pm - 5pm" }
+        ]
+    };
+
+    res.json({
+        success: true,
+        data: menuDelDia
+    });
+});
