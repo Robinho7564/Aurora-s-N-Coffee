@@ -1,0 +1,43 @@
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+      # github.com/actions en checkout es para
+        uses: actions/checkout@v7
+
+# test Evalu una condicion y -f Comprueba que la ruta exista
+      - name: Verify index.html
+        run: |
+          echo "Verificando index.html..."
+          test -f index.html
+          echo "Index.html encontrado."
+
+      - name: Verify styles.css
+        run: |
+          echo "Verificando styles.css..."
+          test -f styles/styles.css
+          echo "styles.css econtrado."
+
+      - name: Verify HTML structure
+        run: |
+          echo "Verificando estructura HTML..."
+
+          grep -qi "<html" index.html
+          grep -qi "<head" index.html
+          grep -qi "<body" index.html
+
+          echo "Estructura HTML basica correcta."
+# grep -q Busca un texto y comunica si lo encontre mediante un 
+      - name: Verefy CSS reference
+        run: |
+          echo "Verificando referencia a styles.css..."
+          grep -q 'styles/styles.css' index.html
+          echo "referencia a styles.css encontrada."
+        
