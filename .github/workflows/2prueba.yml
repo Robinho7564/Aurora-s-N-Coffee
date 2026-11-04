@@ -1,0 +1,24 @@
+name : testPush
+
+
+on:
+  push:
+    branches: [prog2]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    -name: Checkout repo
+    uses: actions/checkout@v7
+
+    -name: Commit and push changes
+    uses: stefanzweifel/git-auto-commit-action@v7
+    with:
+        commit_message: Archivos actualizados 
+        commit_user_name: Prog2
+        commit_user_email: l23070012@huetamo.tecnm.mx
+        commit_author: Jesus Garcia
