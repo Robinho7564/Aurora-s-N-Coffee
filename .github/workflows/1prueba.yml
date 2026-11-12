@@ -41,3 +41,4 @@ jobs:
           grep -q 'styles/styles.css' index.html
           echo "referencia a styles.css encontrada."
         
+# Verificacion automatica de archivos HTML y CSS
