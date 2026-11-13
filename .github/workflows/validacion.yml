@@ -1,0 +1,30 @@
+
+name: Validacion de Aurora's N Coffee
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  verificar-proyecto:
+    name: Verificar archivos del proyecto
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar archivo HTML
+        run: |
+          test -f Prueba.html
+          echo "El archivo Prueba.html existe correctamente"
+
+      - name: Verificar archivo README
+        run: |
+          test -f README.md
+          echo "El archivo README.md existe correctamente"
+
+      - name: Finalizar validacion
+        run: echo "La validacion de Aurora's N Coffee ha terminado correctamente"
